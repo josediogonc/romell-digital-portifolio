@@ -1,0 +1,34 @@
+.project { min-width: 0; }
+.link { display: block; }
+.preview { display: grid; gap: 1.25rem; }
+.media { position: relative; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-surface); }
+.wide .media { aspect-ratio: 16 / 10; }
+.portrait .media { aspect-ratio: 4 / 5; }
+.image { object-fit: cover; transition: transform 500ms ease; }
+.mediaPlaceholder { position: absolute; inset: 0; display: grid; padding: clamp(1.25rem, 2.5vw, 2rem); align-content: center; justify-items: center; gap: 0.4rem; text-align: center; }
+.mediaPlaceholder::before, .mediaPlaceholder::after { position: absolute; content: ""; background: var(--color-border); }
+.mediaPlaceholder::before { top: 50%; right: 12%; left: 12%; height: 1px; }
+.mediaPlaceholder::after { top: 12%; bottom: 12%; left: 50%; width: 1px; }
+.mediaPlaceholder span, .mediaPlaceholder strong { position: relative; z-index: 1; padding-inline: 0.5rem; background: var(--color-surface); }
+.mediaPlaceholder span { color: var(--color-muted); font: 0.5625rem var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.mediaPlaceholder strong { font-size: clamp(0.875rem, 1.5vw, 1.125rem); font-weight: 400; letter-spacing: -0.03em; }
+.mediaIndex { position: absolute; top: 1rem; left: 1rem; padding: 0.35rem 0.45rem; background: var(--color-surface); color: var(--color-muted); font: 0.5625rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.details { display: grid; gap: 0.75rem; }
+.metadata { color: var(--color-muted); font: 0.625rem var(--font-mono); letter-spacing: 0.07em; text-transform: uppercase; }
+.metadata span { padding-inline: 0.25rem; color: var(--color-text); }
+.titleRow { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
+.titleRow h3 { max-width: 18ch; font-size: clamp(1.65rem, 3.1vw, 3rem); font-weight: 400; line-height: 1.02; letter-spacing: -0.055em; transition: transform var(--transition-fast); }
+.titleRow svg { margin-top: 0.25rem; }
+.roles { color: var(--color-muted); font-size: 0.8125rem; line-height: 1.6; }
+.credits { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; margin: 0.5rem 0 0; padding-top: 0.75rem; border-top: 1px solid var(--color-border); }
+.credits div { display: flex; gap: 0.5rem; }
+.credits dt, .credits dd { margin: 0; font-size: 0.6875rem; line-height: 1.5; }
+.credits dt { color: var(--color-muted); text-transform: uppercase; }
+.link:hover .image { transform: scale(1.025); }
+.link:hover .titleRow h3 { transform: translateX(0.25rem); }
+.link:focus-visible .media { border-color: var(--color-accent); }
+
+@media (max-width: 47.99rem) {
+  .preview { gap: 1rem; }
+  .portrait .media { aspect-ratio: 4 / 3; }
+}
