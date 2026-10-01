@@ -1,0 +1,32 @@
+:root {
+  color-scheme: dark;
+  --color-background: #0b0b0b;
+  --color-surface: #121212;
+  --color-text: #f4f1ea;
+  --color-muted: #a3a19c;
+  --color-border: rgb(244 241 234 / 16%);
+  --color-accent: #d5d0c4;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --page-gutter: clamp(1.25rem, 4.45vw, 5rem);
+  --section-space: clamp(4rem, 8vw, 8rem);
+  --content-width: 1440px;
+  --transition-fast: 180ms ease;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body { margin: 0; background: var(--color-background); color: var(--color-text); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+::selection { color: var(--color-background); background: var(--color-accent); }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+h1, h2, h3, p, figure { margin: 0; }
+svg { display: block; flex-shrink: 0; }
+a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 6px; }
+.skipLink { position: fixed; z-index: 10; top: 1rem; left: 1rem; padding: 1rem; background: var(--color-text); color: var(--color-background); transform: translateY(-200%); }
+.skipLink:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

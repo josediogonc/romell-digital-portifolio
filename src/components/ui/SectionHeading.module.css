@@ -1,0 +1,8 @@
+.heading { display: grid; gap: 1.5rem; }
+.titleRow { display: flex; align-items: baseline; gap: clamp(1rem, 2.5vw, 2.5rem); }
+.number { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--color-muted); }
+.titleRow h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.055em; }
+.description { max-width: 29rem; color: var(--color-muted); font-size: 0.9375rem; line-height: 1.7; }
+@media (min-width: 768px) {
+  .heading { grid-template-columns: 1.1fr 1fr; align-items: start; gap: 3rem; }
+}

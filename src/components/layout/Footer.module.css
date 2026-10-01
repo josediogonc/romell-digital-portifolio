@@ -1,0 +1,9 @@
+.inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; border-top: 1px solid var(--color-border); padding-block: 1.5rem; }
+.brand { font-size: 0.875rem; font-weight: 700; letter-spacing: -0.05em; }
+.location { color: var(--color-muted); font-size: 0.6875rem; }
+.inner a { display: inline-flex; gap: 0.75rem; align-items: center; min-height: 2.75rem; font-size: 0.6875rem; }
+.inner a:hover { color: var(--color-accent); }
+.inner svg { width: 14px; height: 14px; }
+@media (max-width: 479px) {
+  .location { order: 3; width: 100%; }
+}
