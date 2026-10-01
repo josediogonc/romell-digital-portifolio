@@ -1,6 +1,6 @@
 .hero { padding-top: clamp(2.5rem, 5vw, 5rem); }
 .eyebrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem; font: 0.625rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.09em; color: var(--color-muted); }
-.name { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-block: 1rem 1.75rem; font-size: clamp(4.5rem, 12.5vw, 11rem); font-weight: 700; line-height: 0.96; letter-spacing: -0.075em; }
+.name { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 1rem; margin-block: 1rem 1.75rem; font-size: clamp(4rem, 11vw, 9.75rem); font-weight: 700; line-height: 0.96; letter-spacing: -0.075em; }
 .nameText { display: flex; gap: 0.17em; }
 .nameMark { font-size: 0.47em; font-weight: 400; letter-spacing: 0; align-self: center; }
 .introduction { display: grid; gap: 1.75rem; margin-bottom: clamp(2.5rem, 4vw, 4rem); padding-top: 1.75rem; border-top: 1px solid var(--color-border); }
@@ -15,7 +15,7 @@
 .secondary { border-bottom: 1px solid var(--color-border); }
 .secondary:hover { color: var(--color-accent); border-color: var(--color-accent); }
 .mediaFooter { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; color: var(--color-muted); font: 0.5625rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; }
-@media (max-width: 479px) {
+@media (max-width: 47.99rem) {
   .nameText { flex-direction: column; gap: 0; line-height: 0.8; }
 }
 @media (min-width: 768px) {
