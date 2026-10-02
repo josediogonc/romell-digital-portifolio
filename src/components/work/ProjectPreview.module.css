@@ -24,8 +24,6 @@
 .credits div { display: flex; gap: 0.5rem; }
 .credits dt, .credits dd { margin: 0; font-size: 0.6875rem; line-height: 1.5; }
 .credits dt { color: var(--color-muted); text-transform: uppercase; }
-.link:hover .image { transform: scale(1.025); }
-.link:hover .titleRow h3 { transform: translateX(0.25rem); }
 .link:focus-visible .media { border-color: var(--color-accent); }
 
 @media (max-width: 47.99rem) {
@@ -36,4 +34,9 @@
   .titleRow h3 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
   .roles { font-size: 0.875rem; }
   .credits dt, .credits dd { font-size: 0.75rem; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover .image { transform: scale(1.025); }
+  .link:hover .titleRow h3 { transform: translateX(0.25rem); }
 }

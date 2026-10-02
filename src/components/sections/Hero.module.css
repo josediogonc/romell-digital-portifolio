@@ -9,22 +9,22 @@
 .disciplines span { padding-inline: 0.22rem; }
 .summary > p { max-width: 28rem; font-size: 0.9375rem; line-height: 1.7; color: var(--color-muted); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 1.5rem; }
-.actions a { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.25rem; min-height: 3rem; font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.08em; transition: background var(--transition-fast), color var(--transition-fast); }
+.actions a { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.25rem; min-height: 3rem; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; transition: background var(--transition-fast), color var(--transition-fast); }
 .primary { padding: 0.9rem 1.1rem; color: var(--color-background); background: var(--color-text); }
 .primary:hover { background: var(--color-accent); }
 .secondary { border-bottom: 1px solid var(--color-border); }
 .secondary:hover { color: var(--color-accent); border-color: var(--color-accent); }
 .mediaFooter { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; color: var(--color-muted); font: 0.5625rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; }
-@media (max-width: 47.99rem) {
+@media (max-width: 50rem) {
   .hero { padding-top: 2rem; }
   .name { gap: 0.5rem; margin-block: 0.875rem 1.5rem; font-size: clamp(3.25rem, 17vw, 7rem); }
   .nameText { flex-direction: column; gap: 0; line-height: 0.8; }
   .nameMark { align-self: flex-start; margin-top: 0.1em; font-size: 0.38em; }
   .introduction { gap: 1.5rem; margin-bottom: 2rem; padding-top: 1.5rem; }
   .disciplines { margin-top: 1rem; line-height: 1.75; }
-  .mediaFooter { align-items: flex-start; }
 }
 @media (max-width: 479px) {
+  .mediaFooter { align-items: flex-start; }
   .eyebrow { display: grid; justify-content: initial; }
   .actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
   .actions a { gap: 0.5rem; padding-inline: 0.875rem; }

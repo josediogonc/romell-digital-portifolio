@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { ProjectMedia } from "@/components/work/ProjectMedia";
 import { siteConfig } from "@/content/site";
 import {
+  getPortfolioProject,
   getNextPublishedProject,
   getPublishedProject,
   publishedProjects,
@@ -22,15 +23,56 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getPublishedProject(slug);
+  const project = getPortfolioProject(slug);
 
-  if (!project) {
-    return {};
+  if (!project || project.status !== "published") {
+    return {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
   }
 
+  const canonicalPath = `/work/${project.slug}`;
+  const description =
+    project.summary ??
+    project.description ??
+    `${project.roles.join(" · ")}. ${project.category} · ${project.year}.`;
+  const pageTitle = `${project.title} — ${siteConfig.name}`;
+  const imageAlt = project.coverAlt ?? `${project.title} project cover`;
+  const openGraphImage = project.cover
+    ? { url: project.cover, alt: imageAlt }
+    : { url: "/opengraph-image", alt: `${siteConfig.name} portfolio preview` };
+  const twitterImage = project.cover
+    ? { url: project.cover, alt: imageAlt }
+    : { url: "/twitter-image", alt: `${siteConfig.name} portfolio preview` };
+
   return {
-    title: `${project.title} — ${siteConfig.name}`,
-    description: project.summary ?? project.description,
+    title: project.title,
+    description,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    openGraph: {
+      title: pageTitle,
+      description,
+      url: canonicalPath,
+      siteName: siteConfig.name,
+      locale: "en_US",
+      type: "website",
+      images: [openGraphImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description,
+      images: [twitterImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -48,7 +90,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main id="main" className={styles.main}>
       <Container>
-          <header className={styles.projectHeader}>
+        <header className={styles.projectHeader}>
             <p className={styles.eyebrow}>
               {project.category} <span>·</span> {project.year}
             </p>
@@ -71,9 +113,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 View project <Arrow diagonal />
               </a>
             ) : null}
-          </header>
+        </header>
 
-          {project.heroMedia ? (
+        {project.heroMedia ? (
             <div className={styles.heroMedia}>
               <ProjectMedia
                 fallbackTitle={`${project.title} featured media`}
@@ -82,9 +124,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 sizes="(min-width: 1440px) 1280px, (min-width: 480px) calc(100vw - 2.5rem), calc(100vw - 2rem)"
               />
             </div>
-          ) : null}
+        ) : null}
 
-          {hasOverview ? (
+        {hasOverview ? (
             <section className={styles.editorialSection} aria-labelledby="project-overview-title">
               <h2 className={styles.sectionLabel} id="project-overview-title">About the project</h2>
               <div className={styles.copy}>
@@ -92,9 +134,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 {project.description ? <p>{project.description}</p> : null}
               </div>
             </section>
-          ) : null}
+        ) : null}
 
-          {project.responsibilities?.length ? (
+        {project.responsibilities?.length ? (
             <section className={styles.editorialSection} aria-labelledby="project-role-title">
               <h2 className={styles.sectionLabel} id="project-role-title">On this production</h2>
               <ul className={styles.responsibilities}>
@@ -103,9 +145,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 ))}
               </ul>
             </section>
-          ) : null}
+        ) : null}
 
-          {project.gallery?.length ? (
+        {project.gallery?.length ? (
             <section className={styles.gallerySection} aria-labelledby="project-gallery-title">
               <h2 className={styles.sectionLabel} id="project-gallery-title">Project media</h2>
               <div className={styles.gallery}>
@@ -114,15 +156,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     <ProjectMedia
                       fallbackTitle={`${project.title} media ${index + 1}`}
                       media={media}
-                      sizes="(min-width: 1024px) 60vw, (min-width: 480px) calc(100vw - 2.5rem), calc(100vw - 2rem)"
+                      sizes={
+                        index % 3 === 0
+                          ? "(min-width: 1440px) 1280px, (min-width: 1024px) 90vw, (min-width: 480px) calc(100vw - 2.5rem), calc(100vw - 2rem)"
+                          : "(min-width: 1440px) 920px, (min-width: 1024px) 70vw, (min-width: 480px) calc(100vw - 2.5rem), calc(100vw - 2rem)"
+                      }
                     />
                   </div>
                 ))}
               </div>
             </section>
-          ) : null}
+        ) : null}
 
-          {project.credits?.length ? (
+        {project.credits?.length ? (
             <section className={styles.creditsSection} aria-labelledby="project-credits-title">
               <h2 className={styles.sectionLabel} id="project-credits-title">Credits</h2>
               <dl className={styles.credits}>
@@ -134,14 +180,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 ))}
               </dl>
             </section>
-          ) : null}
+        ) : null}
 
-          <nav aria-label="Project navigation" className={styles.projectNavigation}>
+        <nav aria-label="Project navigation" className={styles.projectNavigation}>
             <Link href="/#work">← Back to work</Link>
             {nextProject ? (
               <Link href={`/work/${nextProject.slug}`}>Next project <Arrow /></Link>
             ) : null}
-          </nav>
+        </nav>
       </Container>
     </main>
   );

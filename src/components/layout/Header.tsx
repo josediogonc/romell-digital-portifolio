@@ -8,9 +8,16 @@ export function Header() {
   return (
     <header className={styles.header} id="top">
       <Container className={styles.inner}>
-        <Link href="/" className={styles.brand} aria-label="Romell — back to home">ROMELL<span aria-hidden="true">®</span></Link>
+        <Link href="/" className={styles.brand} aria-label="Romell Tabosa — back to home">
+          ROMELL<span aria-hidden="true">®</span>
+        </Link>
         <nav aria-label="Main navigation" className={styles.navigation}>
-          {siteConfig.navigation.map(({ href, label }) => <Link href={href} key={href}>{label}{href === "/#contact" && <Arrow diagonal />}</Link>)}
+          {siteConfig.navigation.map(({ href, label }) => (
+            <Link href={href} key={href}>
+              {label}
+              {href === "/#contact" ? <Arrow diagonal /> : null}
+            </Link>
+          ))}
         </nav>
       </Container>
     </header>

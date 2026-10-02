@@ -12,6 +12,8 @@ export type SiteConfig = {
   name: string;
   role: string;
   location: string;
+  url: string;
+  description: string;
   email: string;
   navigation: readonly SiteNavigationItem[];
   socials: readonly SiteSocialLink[];
@@ -21,6 +23,8 @@ export const siteConfig: SiteConfig = {
   name: "Romell Tabosa",
   role: "Production Tech & Camera Operator",
   location: "San Diego, California",
+  url: "https://romelltabosa.com",
+  description: "Production Tech, Camera Operator and production crew member based in San Diego, California. Camera, grip, audio, focus pulling and on-set support for commercial and branded productions.",
   email: "",
   navigation: [
     { href: "/#work", label: "Work" },

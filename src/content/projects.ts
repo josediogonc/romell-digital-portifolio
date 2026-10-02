@@ -80,8 +80,13 @@ export const publishedProjects = portfolioProjects.filter(
   (project) => project.status === "published",
 );
 
+export function getPortfolioProject(slug: string) {
+  return portfolioProjects.find((project) => project.slug === slug);
+}
+
 export function getPublishedProject(slug: string) {
-  return publishedProjects.find((project) => project.slug === slug);
+  const project = getPortfolioProject(slug);
+  return project?.status === "published" ? project : undefined;
 }
 
 export function getNextPublishedProject(slug: string) {
