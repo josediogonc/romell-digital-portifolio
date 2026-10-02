@@ -5,6 +5,13 @@
 .eyebrow { color: var(--color-muted); font: 0.625rem var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; }
 .titleRow h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.055em; }
 .description { max-width: 29rem; color: var(--color-muted); font-size: 0.9375rem; line-height: 1.7; }
+@media (max-width: 479px) {
+  .heading { gap: 1.25rem; }
+  .titleRow { grid-template-columns: 1.5rem minmax(0, 1fr); gap: 0.75rem; }
+  .number { margin-top: 0.45rem; font-size: 0.625rem; }
+  .titleRow h2 { font-size: clamp(1.85rem, 9.5vw, 2.25rem); }
+}
+
 @media (min-width: 768px) {
   .heading { grid-template-columns: 1.1fr 1fr; align-items: start; gap: 3rem; }
 }

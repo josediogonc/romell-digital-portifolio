@@ -20,6 +20,7 @@ export function SelectedWork() {
             {portfolioProjects.map((project, index) => (
               <ProjectPreview
                 className={styles.projectItem}
+                href={project.status === "published" ? `/work/${project.slug}` : undefined}
                 index={String(index + 1).padStart(2, "0")}
                 key={project.slug}
                 project={project}

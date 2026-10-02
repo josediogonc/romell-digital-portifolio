@@ -30,5 +30,10 @@
 
 @media (max-width: 47.99rem) {
   .preview { gap: 1rem; }
-  .portrait .media { aspect-ratio: 4 / 3; }
+  .wide .media, .portrait .media { aspect-ratio: 4 / 3; }
+  .mediaIndex { top: 0.75rem; left: 0.75rem; }
+  .metadata { font-size: 0.6875rem; line-height: 1.5; }
+  .titleRow h3 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+  .roles { font-size: 0.875rem; }
+  .credits dt, .credits dd { font-size: 0.75rem; }
 }

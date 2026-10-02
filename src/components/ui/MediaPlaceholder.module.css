@@ -9,6 +9,12 @@
 .captionTitle { font-size: clamp(1rem, 2.2vw, 1.75rem); letter-spacing: -0.04em; }
 .captionNote, .ratio { font: 0.625rem var(--font-mono); color: var(--color-muted); }
 .ratio { display: none; position: absolute; bottom: 1.25rem; right: 1.25rem; }
+@media (max-width: 479px) {
+  .frame { min-height: 0; aspect-ratio: 4 / 3; }
+  .topLine { inset: 1rem 1rem auto; }
+  .caption { inset: auto 1rem 1rem; }
+}
+
 @media (min-width: 768px) {
   .topLine { inset: 1.75rem 1.75rem auto; }
   .caption { inset: auto 1.75rem 1.75rem; }

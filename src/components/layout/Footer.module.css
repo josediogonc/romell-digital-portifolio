@@ -5,5 +5,7 @@
 .inner a:hover { color: var(--color-accent); }
 .inner svg { width: 14px; height: 14px; }
 @media (max-width: 479px) {
-  .location { order: 3; width: 100%; }
+  .inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.5rem 1rem; padding-block: 1.25rem; }
+  .location { grid-column: 1 / -1; width: auto; }
+  .inner a { min-height: 2.5rem; }
 }
