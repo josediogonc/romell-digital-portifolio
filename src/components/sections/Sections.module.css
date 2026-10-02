@@ -2,18 +2,35 @@
 .content { border-top: 1px solid var(--color-border); padding-top: clamp(1.75rem, 3.5vw, 3rem); }
 .workGrid { display: grid; gap: clamp(3.5rem, 8vw, 7rem); margin-top: clamp(3rem, 7vw, 6rem); }
 .projectItem { min-width: 0; }
-.placeholderLabel { color: var(--color-muted); font: 0.625rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; }
-.placeholderCopy { color: var(--color-muted); font-size: 0.875rem; line-height: 1.7; }
 .capabilities { margin: clamp(3rem, 6vw, 5.5rem) 0 0; padding: 0; border-top: 1px solid var(--color-border); list-style: none; }
 .capability { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: 0.75rem 1rem; padding-block: clamp(1.75rem, 4vw, 3.25rem); border-bottom: 1px solid var(--color-border); }
 .capabilityNumber { padding-top: 0.45rem; color: var(--color-muted); font: 0.625rem var(--font-mono); letter-spacing: 0.08em; }
 .capabilityTitle { font-size: clamp(1.65rem, 3vw, 2.75rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.05em; }
 .capabilityDescription { grid-column: 2; max-width: 34rem; color: var(--color-muted); font-size: clamp(0.875rem, 1.25vw, 1rem); line-height: 1.7; }
-.reserved { display: flex; align-items: center; min-height: 7rem; padding-top: 1.5rem; }
+.aboutLayout { display: grid; gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(3rem, 7vw, 6rem); }
+.aboutIntroduction { max-width: 30rem; font-size: clamp(1.4rem, 2.8vw, 2.4rem); line-height: 1.25; letter-spacing: -0.04em; }
+.aboutStory { display: grid; max-width: 44rem; gap: 1.4rem; }
+.aboutStory > p { color: var(--color-muted); font-size: clamp(0.9375rem, 1.35vw, 1.075rem); line-height: 1.75; }
+.aboutStory > .aboutTools { margin-top: 0.75rem; padding-block: 1rem; border-block: 1px solid var(--color-border); font: 0.625rem/1.8 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.aboutQuote { margin: clamp(1.5rem, 4vw, 3rem) 0 0; padding-top: clamp(1.5rem, 3vw, 2.5rem); border-top: 1px solid var(--color-border); }
+.aboutQuote p { max-width: 15ch; font-size: clamp(2rem, 5vw, 4.5rem); line-height: 0.98; letter-spacing: -0.06em; }
+.experienceList { margin: clamp(3rem, 7vw, 6rem) 0 0; padding: 0; border-top: 1px solid var(--color-border); list-style: none; }
+.experienceItem { display: grid; gap: 1.5rem; padding-block: clamp(2rem, 5vw, 4.5rem); border-bottom: 1px solid var(--color-border); }
+.experienceDates { display: flex; flex-wrap: wrap; gap: 0.4rem; color: var(--color-muted); font: 0.625rem var(--font-mono); letter-spacing: 0.07em; text-transform: uppercase; }
+.experienceBody { display: grid; min-width: 0; }
+.experienceRole { max-width: 22ch; font-size: clamp(1.75rem, 3.75vw, 3.5rem); font-weight: 400; line-height: 1.03; letter-spacing: -0.055em; }
+.experienceCompany { margin-top: 0.75rem; font: 0.6875rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.experienceMeta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; color: var(--color-muted); font-size: 0.75rem; }
+.experienceDescription { display: grid; max-width: 42rem; gap: 1rem; margin-top: clamp(1.5rem, 3vw, 2.5rem); color: var(--color-muted); font-size: clamp(0.875rem, 1.2vw, 1rem); line-height: 1.75; }
 .contact { padding-block: var(--section-space); }
-.closing { margin-block: 2.5rem 1.5rem; max-width: 60rem; font-size: clamp(2.5rem, 7vw, 6.25rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.06em; text-wrap: balance; }
-.contactDetails { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; }
-.availability { max-width: 30rem; color: var(--color-muted); font-size: 0.9375rem; line-height: 1.7; }
+.contactBlock { display: grid; gap: 2rem; margin-top: clamp(3rem, 7vw, 6rem); }
+.availability { max-width: 38rem; color: var(--color-muted); font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.7; }
+.contactAction, .contactPending { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.5rem 1.5rem; min-width: 0; padding-block: clamp(1.5rem, 3vw, 2.25rem); border-block: 1px solid var(--color-border); }
+.contactAction { transition: color var(--transition-fast), padding-inline var(--transition-fast); }
+.contactAction > span:first-child, .contactPending > span { font: 0.6875rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.contactAddress, .contactPending strong { grid-column: 1; min-width: 0; color: var(--color-muted); font-size: clamp(0.875rem, 1.3vw, 1rem); font-weight: 400; line-height: 1.5; overflow-wrap: anywhere; }
+.contactAction svg { grid-column: 2; grid-row: 1 / span 2; width: 1rem; height: 1rem; }
+.contactAction:hover { padding-inline: 0.5rem; color: var(--color-accent); }
 @media (max-width: 479px) {
   .content { padding-top: 1.5rem; }
   .workGrid { gap: 3rem; margin-top: 2.5rem; }
@@ -21,9 +38,15 @@
   .capability { grid-template-columns: 1.75rem minmax(0, 1fr); gap: 0.75rem; padding-block: 1.5rem; }
   .capabilityNumber { padding-top: 0.35rem; }
   .capabilityTitle { font-size: clamp(1.5rem, 8vw, 1.9rem); }
-  .reserved { min-height: 5.5rem; }
-  .closing { margin-block: 2rem 1.25rem; font-size: clamp(2.25rem, 12vw, 3.25rem); }
-  .contactDetails { align-items: flex-start; gap: 1.5rem; }
+  .aboutLayout, .experienceList { margin-top: 2.75rem; }
+  .aboutIntroduction { font-size: clamp(1.35rem, 7vw, 1.8rem); }
+  .aboutStory { gap: 1.2rem; }
+  .aboutQuote p { font-size: clamp(2rem, 11vw, 3rem); }
+  .experienceItem { gap: 1.25rem; padding-block: 2.25rem; }
+  .experienceRole { font-size: clamp(1.7rem, 9vw, 2.35rem); }
+  .experienceDescription { margin-top: 1.5rem; }
+  .contactBlock { gap: 1.5rem; margin-top: 2.75rem; }
+  .contactAction, .contactPending { padding-block: 1.5rem; }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .workGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; }
@@ -33,9 +56,12 @@
 @media (min-width: 768px) {
   .capability { grid-template-columns: minmax(2.5rem, 0.2fr) minmax(14rem, 0.85fr) minmax(18rem, 1fr); align-items: start; column-gap: clamp(1.5rem, 4vw, 4rem); }
   .capabilityDescription { grid-column: auto; }
-  .reserved { margin-left: calc((100% - 3rem) / 2.1 * 1.1 + 3rem); }
+  .aboutLayout { grid-template-columns: minmax(14rem, 0.8fr) minmax(24rem, 1.2fr); align-items: start; }
+  .experienceItem { grid-template-columns: minmax(9rem, 0.35fr) minmax(0, 1fr); column-gap: clamp(2rem, 6vw, 7rem); }
 }
 @media (min-width: 1024px) {
+  .contactBlock { grid-template-columns: 1.1fr 1fr; column-gap: 3rem; }
+  .availability, .contactAction, .contactPending { grid-column: 2; }
   .workGrid { grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; column-gap: clamp(1rem, 2.5vw, 2.5rem); }
   .projectItem:nth-child(4n + 1) { grid-column: 1 / span 7; }
   .projectItem:nth-child(4n + 2) { grid-column: 9 / span 4; margin-top: 18%; }

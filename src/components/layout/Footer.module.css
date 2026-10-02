@@ -1,11 +1,22 @@
-.inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; border-top: 1px solid var(--color-border); padding-block: 1.5rem; }
-.brand { font-size: 0.875rem; font-weight: 700; letter-spacing: -0.05em; }
-.location { color: var(--color-muted); font-size: 0.6875rem; }
-.inner a { display: inline-flex; gap: 0.75rem; align-items: center; min-height: 2.75rem; font-size: 0.6875rem; }
-.inner a:hover { color: var(--color-accent); }
-.inner svg { width: 14px; height: 14px; }
+.footer { padding-bottom: 1rem; }
+.primary { display: grid; gap: 2.5rem; padding-block: clamp(2.5rem, 5vw, 4.5rem); border-top: 1px solid var(--color-border); }
+.identity { display: grid; align-content: start; justify-items: start; }
+.brand { font-size: clamp(1.5rem, 3vw, 2.75rem); font-weight: 650; line-height: 1; letter-spacing: -0.065em; text-transform: uppercase; }
+.role { margin-top: 1rem; font-size: 0.8125rem; }
+.location { margin-top: 0.4rem; color: var(--color-muted); font-size: 0.75rem; }
+.navigation, .socials { display: flex; flex-wrap: wrap; align-content: start; gap: 0.25rem 1.5rem; }
+.navigation a, .socials a, .backToTop { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--color-muted); font: 0.625rem var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; transition: color var(--transition-fast); }
+.navigation a:hover, .socials a:hover, .backToTop:hover { color: var(--color-text); }
+.secondary { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; border-top: 1px solid var(--color-border); }
+.secondary p { color: var(--color-muted); font-size: 0.6875rem; }
+.backToTop { gap: 0.75rem; color: var(--color-text); }
+.backToTop svg { width: 0.875rem; height: 0.875rem; }
 @media (max-width: 479px) {
-  .inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.5rem 1rem; padding-block: 1.25rem; }
-  .location { grid-column: 1 / -1; width: auto; }
-  .inner a { min-height: 2.5rem; }
+  .primary { gap: 2rem; padding-block: 2.5rem; }
+  .navigation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1rem; }
+  .secondary { align-items: flex-start; }
+}
+@media (min-width: 768px) {
+  .primary { grid-template-columns: minmax(16rem, 1.2fr) minmax(16rem, 1fr) auto; align-items: start; }
+  .socials { justify-content: flex-end; }
 }

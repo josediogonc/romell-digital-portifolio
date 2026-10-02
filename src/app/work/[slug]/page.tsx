@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
 import { Arrow } from "@/components/ui/Arrow";
 import { Container } from "@/components/ui/Container";
 import { ProjectMedia } from "@/components/work/ProjectMedia";
+import { siteConfig } from "@/content/site";
 import {
   getNextPublishedProject,
   getPublishedProject,
@@ -30,7 +29,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   return {
-    title: `${project.title} — Romell Tabosa`,
+    title: `${project.title} — ${siteConfig.name}`,
     description: project.summary ?? project.description,
   };
 }
@@ -47,10 +46,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const hasOverview = Boolean(project.summary || project.description);
 
   return (
-    <>
-      <Header />
-      <main id="main" className={styles.main}>
-        <Container>
+    <main id="main" className={styles.main}>
+      <Container>
           <header className={styles.projectHeader}>
             <p className={styles.eyebrow}>
               {project.category} <span>·</span> {project.year}
@@ -145,9 +142,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Link href={`/work/${nextProject.slug}`}>Next project <Arrow /></Link>
             ) : null}
           </nav>
-        </Container>
-      </main>
-      <Footer />
-    </>
+      </Container>
+    </main>
   );
 }
