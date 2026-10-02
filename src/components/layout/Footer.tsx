@@ -7,7 +7,7 @@ export function Footer() {
     <footer>
       <Container>
         <div className={styles.inner}>
-          <span className={styles.brand}>ROMELL DUARTE</span>
+          <span className={styles.brand}>ROMELL TABOSA</span>
           <span className={styles.location}>San Diego, California</span>
           <a href="#top">Back to top <Arrow diagonal /></a>
         </div>

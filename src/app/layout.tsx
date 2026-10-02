@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Romell Duarte | Production Tech & Camera Operator",
+  title: "Romell Tabosa | Production Tech & Camera Operator",
   description:
     "Commercial production crew member and visual storyteller based in San Diego, California. Camera, grip, audio, focus pulling and on-set support.",
 };
