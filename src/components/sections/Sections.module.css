@@ -8,7 +8,10 @@
 .capabilityTitle { font-size: clamp(1.65rem, 3vw, 2.75rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.05em; }
 .capabilityDescription { grid-column: 2; max-width: 34rem; color: var(--color-muted); font-size: clamp(0.875rem, 1.25vw, 1rem); line-height: 1.7; }
 .aboutLayout { display: grid; gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(3rem, 7vw, 6rem); }
+.aboutAside { display: grid; align-content: start; gap: clamp(2rem, 4vw, 3.5rem); }
 .aboutIntroduction { max-width: 30rem; font-size: clamp(1.4rem, 2.8vw, 2.4rem); line-height: 1.25; letter-spacing: -0.04em; }
+.aboutMedia { position: relative; width: 100%; max-width: 30rem; aspect-ratio: 1; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-surface); }
+.aboutImage { object-fit: cover; }
 .aboutStory { display: grid; max-width: 44rem; gap: 1.4rem; }
 .aboutStory > p { color: var(--color-muted); font-size: clamp(0.9375rem, 1.35vw, 1.075rem); line-height: 1.75; }
 .aboutStory > .aboutTools { margin-top: 0.75rem; padding-block: 1rem; border-block: 1px solid var(--color-border); font: 0.625rem/1.8 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
