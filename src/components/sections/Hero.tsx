@@ -9,7 +9,7 @@ export function Hero() {
       <Container>
         <div className={styles.eyebrow}><span>Independent production crew</span><span>San Diego, California</span></div>
         <h1 id="hero-title" className={styles.name}>
-          <span className={styles.nameText}><span>ROMELL</span><span>DUARTE</span></span>
+          <span className={styles.nameText}><span>ROMELL</span><span>TABOSA</span></span>
           <span className={styles.nameMark} aria-hidden="true">↗</span>
         </h1>
         <div className={styles.introduction}>
