@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Arrow } from "@/components/ui/Arrow";
+import { Icon } from "@/components/ui/Icon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/content/site";
 import styles from "./Sections.module.css";
@@ -27,16 +28,22 @@ export function Contact() {
               <div className={styles.contactMethods}>
                 {contactEmail ? (
                   <a className={styles.contactAction} href={`mailto:${contactEmail}`}>
-                    <span>Email Romell</span>
-                    <span className={styles.contactAddress}>{contactEmail}</span>
-                    <Arrow diagonal />
+                    <Icon className={styles.contactIcon} name="email" />
+                    <span className={styles.contactCopy}>
+                      <span className={styles.contactLabel}>Email Romell</span>
+                      <span className={styles.contactAddress}>{contactEmail}</span>
+                    </span>
+                    <span className={styles.contactArrow}><Arrow diagonal /></span>
                   </a>
                 ) : null}
                 {contactPhone ? (
                   <a className={styles.contactAction} href={`tel:${contactPhone}`}>
-                    <span>Call Romell</span>
-                    <span className={styles.contactAddress}>{siteConfig.phone.display}</span>
-                    <Arrow diagonal />
+                    <Icon className={styles.contactIcon} name="phone" />
+                    <span className={styles.contactCopy}>
+                      <span className={styles.contactLabel}>Call Romell</span>
+                      <span className={styles.contactAddress}>{siteConfig.phone.display}</span>
+                    </span>
+                    <span className={styles.contactArrow}><Arrow diagonal /></span>
                   </a>
                 ) : null}
               </div>

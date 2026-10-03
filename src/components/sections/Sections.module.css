@@ -29,14 +29,17 @@
 .contactBlock { display: grid; gap: 2rem; margin-top: clamp(3rem, 7vw, 6rem); }
 .availability { max-width: 38rem; color: var(--color-muted); font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.7; }
 .contactMethods { display: grid; border-block: 1px solid var(--color-border); }
-.contactAction, .contactPending { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.5rem 1.5rem; min-width: 0; padding-block: clamp(1.5rem, 3vw, 2.25rem); }
+.contactAction, .contactPending { display: grid; align-items: center; min-width: 0; padding-block: clamp(1.5rem, 3vw, 2.25rem); }
 .contactPending { border-block: 1px solid var(--color-border); }
 .contactAction + .contactAction { border-top: 1px solid var(--color-border); }
-.contactAction { transition: color var(--transition-fast), padding-inline var(--transition-fast); }
-.contactAction > span:first-child, .contactPending > span { font: 0.6875rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
-.contactAddress, .contactPending strong { grid-column: 1; min-width: 0; color: var(--color-muted); font-size: clamp(0.875rem, 1.3vw, 1rem); font-weight: 400; line-height: 1.5; overflow-wrap: anywhere; }
-.contactAction svg { grid-column: 2; grid-row: 1 / span 2; width: 1rem; height: 1rem; }
+.contactAction { grid-template-columns: auto minmax(0, 1fr) auto; gap: 1rem; transition: color var(--transition-fast), padding-inline var(--transition-fast); }
+.contactCopy { display: grid; min-width: 0; gap: 0.5rem; }
+.contactLabel, .contactPending > span { font: 0.6875rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.contactAddress, .contactPending strong { min-width: 0; color: var(--color-muted); font-size: clamp(0.875rem, 1.3vw, 1rem); font-weight: 400; line-height: 1.5; overflow-wrap: anywhere; }
+.contactIcon { width: 1.25rem; height: 1.25rem; color: var(--color-muted); transition: color var(--transition-fast); }
+.contactArrow svg { width: 1rem; height: 1rem; }
 .contactAction:hover { padding-inline: 0.5rem; color: var(--color-accent); }
+.contactAction:hover .contactIcon { color: var(--color-text); }
 @media (max-width: 479px) {
   .content { padding-top: 1.5rem; }
   .workGrid { gap: 3rem; margin-top: 2.5rem; }

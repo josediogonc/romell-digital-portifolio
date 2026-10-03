@@ -1,8 +1,16 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Arrow } from "@/components/ui/Arrow";
+import { Icon, type IconName } from "@/components/ui/Icon";
 import { siteConfig } from "@/content/site";
 import styles from "./Footer.module.css";
+
+const socialIcons = {
+  Instagram: "instagram",
+  LinkedIn: "linkedin",
+  Vimeo: "vimeo",
+  YouTube: "youtube",
+} satisfies Record<(typeof siteConfig.socials)[number]["label"], IconName>;
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,6 +34,7 @@ export function Footer() {
             <nav className={styles.socials} aria-label="Social links">
               {socialLinks.map((social) => (
                 <a href={social.url} key={social.label} rel="noreferrer" target="_blank">
+                  <Icon className={styles.socialIcon} name={socialIcons[social.label]} />
                   {social.label}
                 </a>
               ))}
