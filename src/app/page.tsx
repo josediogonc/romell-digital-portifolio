@@ -8,12 +8,16 @@ import { siteConfig } from "@/content/site";
 
 export default function Home() {
   const sameAs = siteConfig.socials.map((social) => social.url.trim()).filter(Boolean);
+  const contactEmail = siteConfig.email.trim();
+  const contactPhone = siteConfig.phone.value.trim();
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: siteConfig.name,
     url: siteConfig.url,
     jobTitle: siteConfig.role,
+    ...(contactEmail ? { email: contactEmail } : {}),
+    ...(contactPhone ? { telephone: contactPhone } : {}),
     address: {
       "@type": "PostalAddress",
       addressLocality: "San Diego",

@@ -4,17 +4,17 @@ Este documento reúne as informações e mídias necessárias para finalizar o c
 
 ## 1. Contato profissional
 
-- [ ] E-mail público para trabalhos.
-- [ ] Telefone ou WhatsApp, somente se desejar exibir publicamente.
-- [ ] Melhor forma de contato para produtores, agências e equipes de produção.
+- [x] E-mail público para trabalhos.
+- [x] Telefone ou WhatsApp, somente se desejar exibir publicamente.
+- [x] Melhor forma de contato para produtores, agências e equipes de produção.
 
 ## 2. Redes sociais
 
-- [ ] Instagram.
-- [ ] LinkedIn.
+- [x] Instagram.
+- [x] LinkedIn.
 - [ ] Vimeo.
 - [ ] YouTube.
-- [ ] Confirmar quais perfis podem aparecer publicamente no site.
+- [x] Confirmar quais perfis podem aparecer publicamente no site.
 
 ## 3. Projetos reais
 
@@ -144,8 +144,8 @@ Não enviar números de série ou outras informações sensíveis.
 
 Para lançar o portfólio com conteúdo real, precisamos de:
 
-- [ ] E-mail profissional.
-- [ ] URLs reais das redes sociais que deverão ser exibidas.
+- [x] E-mail profissional.
+- [x] URLs reais das redes sociais que deverão ser exibidas.
 - [ ] Entre 3 e 6 projetos autorizados.
 - [ ] Uma imagem de capa de qualidade para cada projeto.
 - [ ] Funções, responsabilidades e créditos reais de cada projeto.

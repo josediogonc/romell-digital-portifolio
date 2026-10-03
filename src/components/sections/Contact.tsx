@@ -6,6 +6,8 @@ import styles from "./Sections.module.css";
 
 export function Contact() {
   const contactEmail = siteConfig.email.trim();
+  const contactPhone = siteConfig.phone.value.trim();
+  const hasContactMethods = Boolean(contactEmail || contactPhone);
 
   return (
     <section id="contact" aria-labelledby="contact-title" className={`${styles.section} ${styles.contact}`}>
@@ -21,12 +23,23 @@ export function Contact() {
             <p className={styles.availability}>
               Available for commercial productions, branded content and freelance crew work in San Diego and Southern California.
             </p>
-            {contactEmail ? (
-              <a className={styles.contactAction} href={`mailto:${contactEmail}`}>
-                <span>Email Romell</span>
-                <span className={styles.contactAddress}>{contactEmail}</span>
-                <Arrow diagonal />
-              </a>
+            {hasContactMethods ? (
+              <div className={styles.contactMethods}>
+                {contactEmail ? (
+                  <a className={styles.contactAction} href={`mailto:${contactEmail}`}>
+                    <span>Email Romell</span>
+                    <span className={styles.contactAddress}>{contactEmail}</span>
+                    <Arrow diagonal />
+                  </a>
+                ) : null}
+                {contactPhone ? (
+                  <a className={styles.contactAction} href={`tel:${contactPhone}`}>
+                    <span>Call Romell</span>
+                    <span className={styles.contactAddress}>{siteConfig.phone.display}</span>
+                    <Arrow diagonal />
+                  </a>
+                ) : null}
+              </div>
             ) : (
               <div className={styles.contactPending} role="note">
                 <span>Email Romell</span>
