@@ -39,7 +39,6 @@ export const siteConfig: SiteConfig = {
   navigation: [
     { href: "/#work", label: "Work" },
     { href: "/#about", label: "About" },
-    { href: "/#experience", label: "Experience" },
     { href: "/#contact", label: "Contact" },
   ],
   socials: [
