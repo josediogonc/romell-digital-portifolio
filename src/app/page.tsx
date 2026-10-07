@@ -1,6 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
 import { SelectedWork } from "@/components/sections/SelectedWork";
-import { Roles } from "@/components/sections/Roles";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { siteConfig } from "@/content/site";
@@ -36,7 +35,6 @@ export default function Home() {
       />
       <Hero />
       <SelectedWork />
-      <Roles />
       <About />
       <Contact />
     </main>

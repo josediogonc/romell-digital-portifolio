@@ -5,7 +5,8 @@
 .nameMark { font-size: 0.47em; font-weight: 400; letter-spacing: 0; align-self: center; }
 .introduction { display: grid; gap: 1.75rem; margin-bottom: clamp(2.5rem, 4vw, 4rem); padding-top: 1.75rem; border-top: 1px solid var(--color-border); }
 .title { font-size: clamp(1.75rem, 3.1vw, 2.75rem); font-weight: 400; line-height: 1.13; letter-spacing: -0.05em; }
-.disciplines { margin-top: 1.25rem; color: var(--color-muted); font-size: 0.6875rem; line-height: 1.9; }
+.disciplines { margin-top: 1.25rem; color: var(--color-muted); font-size: clamp(1.125rem, 1.6vw, 1.5rem); line-height: 1.4; }
+.location { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
 .disciplines span { padding-inline: 0.22rem; }
 .summary > p { max-width: 28rem; font-size: 0.9375rem; line-height: 1.7; color: var(--color-muted); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 1.5rem; }
@@ -21,7 +22,7 @@
   .nameText { flex-direction: column; gap: 0; line-height: 0.8; }
   .nameMark { align-self: flex-start; margin-top: 0.1em; font-size: 0.38em; }
   .introduction { gap: 1.5rem; margin-bottom: 2rem; padding-top: 1.5rem; }
-  .disciplines { margin-top: 1rem; line-height: 1.75; }
+  .disciplines { margin-top: 1rem; }
 }
 @media (max-width: 479px) {
   .mediaFooter { align-items: flex-start; }
