@@ -35,6 +35,8 @@ type GripGalleryMedia =
   | { kind: "image"; src: string; alt: string; width: number; height: number }
   | { kind: "video"; src: string; label: string; orientation: "landscape" | "portrait" };
 
+type SurfPhoto = { src: string; alt: string; width: number; height: number };
+
 export const cameraProjects: readonly VideoWorkProject[] = [
   {
     title: "Battle Bars",
@@ -139,6 +141,81 @@ export const gripGalleryRows: readonly (readonly GripGalleryMedia[])[] = [
       alt: "Camera crew and lighting in front of an LED wall",
       width: 4284,
       height: 5712,
+    },
+  ],
+];
+
+export const surfGalleryRows: readonly (readonly SurfPhoto[])[] = [
+  [
+    {
+      src: "/images/surf/surf-1.JPG",
+      alt: "A surfer rides a breaking wave beyond spectators on the shore",
+      width: 5659,
+      height: 3773,
+    },
+  ],
+  [
+    {
+      src: "/images/surf/surf-2.jpg",
+      alt: "A surfer rides inside a sunlit yellow wave",
+      width: 2174,
+      height: 1450,
+    },
+    {
+      src: "/images/surf/surf-3.jpg",
+      alt: "A surfer turns on a turquoise wave with spray overhead",
+      width: 4958,
+      height: 3305,
+    },
+  ],
+  [
+    {
+      src: "/images/surf/surf-4.jpg",
+      alt: "Surfers paddle toward a large wave in black and white",
+      width: 5142,
+      height: 3428,
+    },
+    {
+      src: "/images/surf/surf-5.jpg",
+      alt: "A surfer makes a sharp turn on a pink surfboard",
+      width: 4491,
+      height: 2994,
+    },
+  ],
+  [
+    {
+      src: "/images/surf/surf-6.jpg",
+      alt: "A surfer carves across a wave beneath a fan of spray",
+      width: 5448,
+      height: 3632,
+    },
+  ],
+  [
+    {
+      src: "/images/surf/surf-7.jpg",
+      alt: "A large curling wave in black and white",
+      width: 4856,
+      height: 3237,
+    },
+    {
+      src: "/images/surf/surf-8.jpg",
+      alt: "A surfer rides inside a breaking wave near the shore",
+      width: 5932,
+      height: 3955,
+    },
+  ],
+  [
+    {
+      src: "/images/surf/surf-9.jpg",
+      alt: "A surfer in a red shirt rides inside a golden wave",
+      width: 5492,
+      height: 3661,
+    },
+    {
+      src: "/images/surf/surf-10.jpg",
+      alt: "Surfers gather by the beach in front of breaking waves in black and white",
+      width: 2236,
+      height: 1491,
     },
   ],
 ];

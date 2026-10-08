@@ -1,13 +1,8 @@
 export const aboutContent = {
-  introduction:
-    "I'm a Brazilian photographer, filmmaker and production crew member based in San Diego, California.",
   paragraphs: [
-    "My path into filmmaking wasn't conventional. Before moving to the United States, I worked in government in Brazil. I eventually decided to leave that career behind and pursue visual media professionally.",
-    "Photography — especially surf photography — was my entry point into the field. What started behind a still camera evolved into filmmaking and eventually into hands-on commercial production work.",
-    "Today, I work both behind the camera and across production departments, with experience in camera, grip, audio, focus pulling and general on-set support.",
-    "I enjoy being part of small, efficient crews where adaptability matters. Whether I'm operating a camera, helping build a setup or jumping departments to keep production moving, my goal is simple:",
+    "I graduated in Manufacturing Engineering in Brazil, but never worked in the field. Instead, I spent seven years working for the state legislature. While working full time, I taught myself photography, started shooting surf, sold images directly to surfers, reinvested that money into equipment, and built an online presence around my work.",
+    "In 2022, I moved to the US with no local network, very little money, and limited English, determined to build a career in film production. I settled in San Diego and started working on sets as a Production Assistant in 2023. As I gained experience on set, I also took film production classes at San Diego City College. Since then, I’ve worked across commercial productions in Grip & Electric, camera, audio, media, and production support.",
+    "My long-term goal is to grow into a Director of Photography role. Recent Camera Operator work has given me more responsibility over framing, lens choice, lighting, and coordinating G&E within the director’s vision.",
+    "My path into the industry hasn’t been linear, but that experience is a big part of how I work today: understanding what is happening beyond my own role, adapting quickly, and helping the crew get the shot.",
   ],
-  pullQuote: "Help the crew get the shot.",
-  tools:
-    "Photography · Film Production · On-Set Support · Adobe Lightroom · Adobe Premiere Pro",
 } as const;

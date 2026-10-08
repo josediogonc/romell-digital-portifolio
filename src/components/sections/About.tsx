@@ -10,14 +10,12 @@ export function About() {
       <Container>
         <div className={styles.content}>
           <SectionHeading
-            eyebrow="About"
             id="about-title"
-            number="03"
-            title="Built around the image. Useful everywhere on set."
+            number="05"
+            title="About"
           />
           <div className={styles.aboutLayout}>
             <div className={styles.aboutAside}>
-              <p className={styles.aboutIntroduction}>{aboutContent.introduction}</p>
               <figure className={styles.aboutMedia}>
                 <Image
                   alt="Black-and-white portrait of Romell Tabosa"
@@ -30,10 +28,6 @@ export function About() {
             </div>
             <div className={styles.aboutStory}>
               {aboutContent.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              <p className={styles.aboutTools}>{aboutContent.tools}</p>
-              <blockquote className={styles.aboutQuote}>
-                <p>{aboutContent.pullQuote}</p>
-              </blockquote>
             </div>
           </div>
         </div>

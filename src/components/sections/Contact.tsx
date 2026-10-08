@@ -8,7 +8,9 @@ import styles from "./Sections.module.css";
 export function Contact() {
   const contactEmail = siteConfig.email.trim();
   const contactPhone = siteConfig.phone.value.trim();
-  const hasContactMethods = Boolean(contactEmail || contactPhone);
+  const contactSocials = siteConfig.socials.filter(
+    (social) => social.url.trim() && (social.label === "Instagram" || social.label === "LinkedIn"),
+  );
 
   return (
     <section id="contact" aria-labelledby="contact-title" className={`${styles.section} ${styles.contact}`}>
@@ -17,42 +19,58 @@ export function Contact() {
           <SectionHeading
             eyebrow="Contact"
             id="contact-title"
-            number="05"
-            title="Let's work together."
+            number="06"
+            title="Let’s work together."
           />
           <div className={styles.contactBlock}>
             <p className={styles.availability}>
-              Available for commercial productions, branded content and freelance crew work in San Diego and Southern California.
+              Available for freelance crew and production work in San Diego and Southern California.
             </p>
-            {hasContactMethods ? (
-              <div className={styles.contactMethods}>
-                {contactEmail ? (
-                  <a className={styles.contactAction} href={`mailto:${contactEmail}`}>
-                    <Icon className={styles.contactIcon} name="email" />
-                    <span className={styles.contactCopy}>
-                      <span className={styles.contactLabel}>Email Romell</span>
-                      <span className={styles.contactAddress}>{contactEmail}</span>
-                    </span>
-                    <span className={styles.contactArrow}><Arrow diagonal /></span>
-                  </a>
-                ) : null}
-                {contactPhone ? (
-                  <a className={styles.contactAction} href={`tel:${contactPhone}`}>
-                    <Icon className={styles.contactIcon} name="phone" />
-                    <span className={styles.contactCopy}>
-                      <span className={styles.contactLabel}>Call Romell</span>
-                      <span className={styles.contactAddress}>{siteConfig.phone.display}</span>
-                    </span>
-                    <span className={styles.contactArrow}><Arrow diagonal /></span>
-                  </a>
-                ) : null}
-              </div>
-            ) : (
-              <div className={styles.contactPending} role="note">
-                <span>Email Romell</span>
-                <strong>Email address pending confirmation</strong>
-              </div>
-            )}
+            <div className={styles.contactMethods}>
+              {contactEmail ? (
+                <a className={styles.contactAction} href={`mailto:${contactEmail}`}>
+                  <Icon className={styles.contactIcon} name="email" />
+                  <span className={styles.contactCopy}>
+                    <span className={styles.contactLabel}>Email</span>
+                    <span className={styles.contactAddress}>{contactEmail}</span>
+                  </span>
+                  <span className={styles.contactArrow}><Arrow diagonal /></span>
+                </a>
+              ) : null}
+              {contactPhone ? (
+                <a className={styles.contactAction} href={`tel:${contactPhone}`}>
+                  <Icon className={styles.contactIcon} name="phone" />
+                  <span className={styles.contactCopy}>
+                    <span className={styles.contactLabel}>Phone</span>
+                    <span className={styles.contactAddress}>{siteConfig.phone.display}</span>
+                  </span>
+                  <span className={styles.contactArrow}><Arrow diagonal /></span>
+                </a>
+              ) : null}
+              {contactSocials.length ? (
+                <div className={styles.contactSocials}>
+                  {contactSocials.map((social) => (
+                    <a
+                      className={`${styles.contactAction} ${styles.contactSocialAction}`}
+                      href={social.url}
+                      key={social.label}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Icon
+                        className={styles.contactIcon}
+                        name={social.label === "Instagram" ? "instagram" : "linkedin"}
+                      />
+                      <span className={styles.contactCopy}>
+                        <span className={styles.contactLabel}>{social.label}</span>
+                        <span className={styles.contactAddress}>{social.display ?? social.url}</span>
+                      </span>
+                      <span className={styles.contactArrow}><Arrow diagonal /></span>
+                    </a>
+                  ))}
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
       </Container>

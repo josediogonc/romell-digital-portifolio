@@ -24,6 +24,9 @@
 .gripGalleryImage, .gripGalleryVideo { display: block; width: 100%; height: auto; }
 .gripGalleryVideo { aspect-ratio: auto 16 / 9; background: var(--color-surface); }
 .gripGalleryVideoPortrait { aspect-ratio: auto 9 / 16; }
+.surfGallery { display: grid; gap: clamp(1rem, 2vw, 1.75rem); margin-top: clamp(3rem, 7vw, 6rem); }
+.surfGalleryRow { display: grid; align-items: start; gap: clamp(1rem, 2vw, 1.75rem); min-width: 0; }
+.surfGalleryImage { display: block; width: 100%; height: auto; min-width: 0; }
 .photoGrid { display: grid; align-items: start; gap: clamp(1rem, 2.5vw, 2.5rem); }
 .photoSlot { aspect-ratio: 4 / 3; }
 .photoSlot:nth-child(2) { aspect-ratio: 4 / 5; }
@@ -47,14 +50,18 @@
 .contactBlock { display: grid; gap: 2rem; margin-top: clamp(3rem, 7vw, 6rem); }
 .availability { max-width: 38rem; color: var(--color-muted); font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.7; }
 .contactMethods { display: grid; border-block: 1px solid var(--color-border); }
+.contactSocials { display: grid; border-top: 1px solid var(--color-border); }
 .contactAction, .contactPending { display: grid; align-items: center; min-width: 0; padding-block: clamp(1.5rem, 3vw, 2.25rem); }
+.contactSocialAction { padding-block: clamp(1rem, 2vw, 1.5rem); color: var(--color-muted); }
 .contactPending { border-block: 1px solid var(--color-border); }
 .contactAction + .contactAction { border-top: 1px solid var(--color-border); }
 .contactAction { grid-template-columns: auto minmax(0, 1fr) auto; gap: 1rem; transition: color var(--transition-fast), padding-inline var(--transition-fast); }
 .contactCopy { display: grid; min-width: 0; gap: 0.5rem; }
 .contactLabel, .contactPending > span { font: 0.6875rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .contactAddress, .contactPending strong { min-width: 0; color: var(--color-muted); font-size: clamp(0.875rem, 1.3vw, 1rem); font-weight: 400; line-height: 1.5; overflow-wrap: anywhere; }
+.contactMethods > .contactAction .contactAddress { color: var(--color-text); }
 .contactIcon { width: 1.25rem; height: 1.25rem; color: var(--color-muted); transition: color var(--transition-fast); }
+.contactSocialAction .contactIcon { width: 1rem; height: 1rem; }
 .contactArrow svg { width: 1rem; height: 1rem; }
 .contactAction:hover { padding-inline: 0.5rem; color: var(--color-accent); }
 .contactAction:hover .contactIcon { color: var(--color-text); }
@@ -64,6 +71,7 @@
   .workGrid { gap: 3rem; margin-top: 2.5rem; }
   .workGallery { margin-top: 2.5rem; }
   .gripGallery { gap: 2rem; margin-top: 2.5rem; }
+  .surfGallery { margin-top: 2.5rem; }
   .capabilities { margin-top: 2.75rem; }
   .capability { grid-template-columns: 1.75rem minmax(0, 1fr); gap: 0.75rem; padding-block: 1.5rem; }
   .capabilityNumber { padding-top: 0.35rem; }
@@ -74,6 +82,7 @@
   .aboutQuote p { font-size: clamp(2rem, 11vw, 3rem); }
   .contactBlock { gap: 1.5rem; margin-top: 2.75rem; }
   .contactAction, .contactPending { padding-block: 1.5rem; }
+  .contactSocialAction { padding-block: 1rem; }
 }
 @media (min-width: 600px) {
   .campaignVideoGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -86,6 +95,7 @@
   .workGridFeatured .projectCampaign { grid-column: 1 / -1; }
   .gripGalleryRowTwo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gripGalleryRowThree { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .surfGalleryPair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .photoGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .capability { grid-template-columns: minmax(2.5rem, 0.2fr) minmax(14rem, 0.85fr) minmax(18rem, 1fr); align-items: start; column-gap: clamp(1.5rem, 4vw, 4rem); }
   .capabilityDescription { grid-column: auto; }

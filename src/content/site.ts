@@ -6,6 +6,7 @@ export type SiteNavigationItem = {
 export type SiteSocialLink = {
   label: "Instagram" | "LinkedIn" | "Vimeo" | "YouTube";
   url: string;
+  display?: string;
 };
 
 export type SitePhone = {
@@ -27,13 +28,13 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: "Romell Tabosa",
-  role: "Production Tech & Camera Operator",
+  role: "Camera Operator & Grip / G&E",
   location: "San Diego, California",
   url: "https://romelltabosa.com",
-  description: "Production Tech, Camera Operator and production crew member based in San Diego, California. Camera, grip, audio, focus pulling and on-set support for commercial and branded productions.",
+  description: "San Diego based camera operator and production professional working across camera, Grip & Electric, and video production.",
   email: "romelltabosa@gmail.com",
   phone: {
-    display: "(+1) 323 328 4987",
+    display: "+1 323 328 4987",
     value: "+13233284987",
   },
   navigation: [
@@ -42,8 +43,8 @@ export const siteConfig: SiteConfig = {
     { href: "/#contact", label: "Contact" },
   ],
   socials: [
-    { label: "Instagram", url: "https://www.instagram.com/taboshots/" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/romelltabosa" },
+    { label: "Instagram", url: "https://instagram.com/taboshots", display: "@taboshots" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/romelltabosa", display: "linkedin.com/in/romelltabosa" },
     { label: "Vimeo", url: "" },
     { label: "YouTube", url: "" },
   ],

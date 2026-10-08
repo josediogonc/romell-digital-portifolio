@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/content/site";
 import "./globals.css";
 
-const defaultTitle = `${siteConfig.name} — ${siteConfig.role}`;
+const defaultTitle = `${siteConfig.name} | ${siteConfig.role}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

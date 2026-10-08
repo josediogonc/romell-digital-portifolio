@@ -5,13 +5,12 @@ import { YouTubePreview } from "@/components/work/YouTubePreview";
 import {
   cameraProjects,
   gripGalleryRows,
+  surfGalleryRows,
   videoProductionProjects,
   workCategories,
   type VideoWorkProject,
 } from "@/content/work";
 import styles from "./Sections.module.css";
-
-const photoSlots = [0, 1, 2];
 
 function ProjectSlots({
   count,
@@ -137,17 +136,27 @@ function GripGallery() {
   );
 }
 
-function PhotoGallerySlots({ title }: { title: string }) {
+function SurfGallery() {
   return (
-    <div className={styles.workGallery}>
-      <h3 className={styles.workGalleryLabel}>{title}</h3>
-      <div className={styles.photoGrid}>
-        {photoSlots.map((slot) => (
-          <div className={styles.photoSlot} key={slot}>
-            <span>Photo pending</span>
-          </div>
-        ))}
-      </div>
+    <div aria-label="Surf photography gallery" className={styles.surfGallery} role="group">
+      {surfGalleryRows.map((row, index) => (
+        <div
+          className={`${styles.surfGalleryRow} ${row.length === 2 ? styles.surfGalleryPair : ""}`}
+          key={index}
+        >
+          {row.map((photo) => (
+            <Image
+              alt={photo.alt}
+              className={styles.surfGalleryImage}
+              height={photo.height}
+              key={photo.src}
+              sizes={row.length === 2 ? "(min-width: 768px) 45vw, 100vw" : "(min-width: 1440px) 1280px, 100vw"}
+              src={photo.src}
+              width={photo.width}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
@@ -185,15 +194,7 @@ export function SelectedWork() {
               <GripGallery />
             ) : null}
             {category.kind === "surf-gallery" ? (
-              <>
-                <PhotoGallerySlots title="Photography gallery" />
-                <div className={styles.workGallery}>
-                  <h3 className={styles.workGalleryLabel}>Selected video work</h3>
-                  <div className={styles.videoSlot}>
-                    <span>Video pending</span>
-                  </div>
-                </div>
-              </>
+              <SurfGallery />
             ) : null}
           </section>
         ))}
