@@ -10,9 +10,9 @@ export function Hero() {
         </h1>
         <div className={styles.introduction}>
           <div>
-            <p className={styles.title}>Camera Operator · Grip &amp; Electric</p>
-            <p className={styles.disciplines}>Video Production &amp; Editing</p>
-            <p className={`${styles.eyebrow} ${styles.location}`}>San Diego, CA</p>
+            <p className={styles.title}>Camera Operator · G&amp;E</p>
+            <p className={styles.disciplines}>Video Production</p>
+            <p className={`${styles.eyebrow} ${styles.location}`}>San Diego, California</p>
           </div>
         </div>
       </Container>

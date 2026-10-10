@@ -232,11 +232,11 @@ export const workCategories: readonly WorkCategory[] = [
     layout: "featured",
   },
   {
-    id: "video-production-editing",
+    id: "video-production",
     number: "02",
-    title: "Video Production / Editing",
+    title: "Video Production",
     introduction:
-      "Small scale productions where I handled camera operation, composition, lighting, B camera, audio recording, and post production, including editing the final pieces.",
+      "Small-scale productions where I handled camera, lighting, audio, and editing, shaping the story in post from unscripted interviews.",
     kind: "projects",
     slots: videoProductionProjects.length,
     layout: "grid",

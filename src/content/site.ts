@@ -38,7 +38,10 @@ export const siteConfig: SiteConfig = {
     value: "+13233284987",
   },
   navigation: [
-    { href: "/#work", label: "Work" },
+    { href: "/#camera", label: "Camera" },
+    { href: "/#video-production", label: "Video Production" },
+    { href: "/#grip-electric", label: "G&E" },
+    { href: "/#surf-photography", label: "Surf" },
     { href: "/#about", label: "About" },
     { href: "/#contact", label: "Contact" },
   ],

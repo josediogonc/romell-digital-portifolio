@@ -22,8 +22,8 @@ export function Footer() {
         <div className={styles.primary}>
           <div className={styles.identity}>
             <Link className={styles.brand} href="/">{siteConfig.name}</Link>
-            <p className={styles.role}>{siteConfig.role}</p>
-            <p className={styles.location}>{siteConfig.location}</p>
+            <p className={styles.role}>Camera Operator · G&amp;E · Video Production</p>
+            <p className={styles.location}>SAN DIEGO, CA</p>
           </div>
           <nav aria-label="Footer navigation" className={styles.navigation}>
             {siteConfig.navigation.map((item) => (

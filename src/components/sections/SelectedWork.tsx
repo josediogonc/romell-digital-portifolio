@@ -169,7 +169,7 @@ export function SelectedWork() {
           <section
             aria-labelledby={`${category.id}-title`}
             className={styles.workCategory}
-            id={`work-${category.id}`}
+            id={category.id}
             key={category.id}
           >
             <SectionHeading
@@ -180,7 +180,7 @@ export function SelectedWork() {
               description={category.introduction}
             />
             {category.kind === "projects" ? (
-              category.id === "video-production-editing" ? (
+              category.id === "video-production" ? (
                 <VideoProductionProjects />
               ) : (
                 <ProjectSlots
