@@ -27,6 +27,7 @@ export type VideoWorkProject = {
 export type VideoProductionProject = {
   title: string;
   credit: string;
+  production: string;
   youtubeId: string;
   orientation: WorkVideo["orientation"];
 };
@@ -60,14 +61,16 @@ export const cameraProjects: readonly VideoWorkProject[] = [
 
 export const videoProductionProjects: readonly VideoProductionProject[] = [
   {
-    title: "Juan — SqueegePrints | CVEC Profile",
+    title: "Juan — SqueegePrints",
     credit: "Camera · Lighting · Audio · Editing",
+    production: "CVEC",
     youtubeId: "p5Ad1vYMQXg",
     orientation: "landscape",
   },
   {
-    title: "Leah — SunDoc | CVEC Profile",
+    title: "Leah — SunDoc",
     credit: "Camera · Lighting · Audio · Editing",
+    production: "CVEC",
     youtubeId: "rbnQpa_zFWc",
     orientation: "portrait",
   },

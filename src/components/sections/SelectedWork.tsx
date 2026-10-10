@@ -88,6 +88,7 @@ function VideoProductionProjects() {
             <div className={styles.videoProjectDetails}>
               <h3 className={styles.videoProjectTitle}>{project.title}</h3>
               <p className={styles.videoProjectRole}>{project.credit}</p>
+              <p className={styles.videoProjectProduction}>{project.production}</p>
             </div>
           </article>
         </li>

@@ -5,14 +5,16 @@
 .navigation a { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; color: var(--color-muted); font-size: 0.625rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; transition: color var(--transition-fast); }
 .navigation a:hover { color: var(--color-text); }
 .navigation svg { width: 12px; height: 12px; }
-@media (max-width: 479px) {
+.menuToggle, .mobileNavigation { display: none; }
+@media (max-width: 767px) {
   .inner { gap: 0.25rem; padding-block: 1rem; }
-  .navigation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 0 1rem; }
-  .navigation a { gap: 0.3rem; min-height: 2.75rem; font-size: 0.6875rem; letter-spacing: 0.04em; }
-}
-@media (max-width: 359px) {
-  .navigation a { font-size: 0.5625rem; letter-spacing: 0.02em; }
-  .navigation svg { display: none; }
+  .navigation { display: none; }
+  .menuToggle { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0; border: 0; background: transparent; color: var(--color-muted); font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; }
+  .menuToggle:hover { color: var(--color-text); }
+  .mobileNavigation { display: grid; flex-basis: 100%; min-width: 0; padding-block: 0.5rem 1rem; }
+  .mobileNavigation[hidden] { display: none; }
+  .mobileNavigation a { display: flex; align-items: center; min-width: 0; min-height: 2.75rem; color: var(--color-muted); font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+  .mobileNavigation a:hover { color: var(--color-text); }
 }
 @media (min-width: 768px) {
   .inner { padding-block: 1.9rem; }

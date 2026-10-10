@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Arrow } from "@/components/ui/Arrow";
 import { siteConfig } from "@/content/site";
+import { MobileMenu } from "./MobileMenu";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -19,6 +20,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <MobileMenu items={siteConfig.navigation} />
       </Container>
     </header>
   );
