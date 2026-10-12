@@ -9,8 +9,21 @@ import {
   videoProductionProjects,
   workCategories,
   type VideoWorkProject,
+  type WorkVideo,
 } from "@/content/work";
 import styles from "./Sections.module.css";
+
+function YouTubeFallbackLink({ video }: { video: WorkVideo }) {
+  const href = video.orientation === "portrait"
+    ? `https://www.youtube.com/shorts/${video.youtubeId}`
+    : `https://www.youtube.com/watch?v=${video.youtubeId}`;
+
+  return (
+    <a className={styles.youtubeFallbackLink} href={href} rel="noopener noreferrer" target="_blank">
+      Watch on YouTube ↗
+    </a>
+  );
+}
 
 function ProjectSlots({
   count,
@@ -37,11 +50,14 @@ function ProjectSlots({
             {project ? (
               <article className={styles.videoProject}>
                 {project.videos.length === 1 ? (
-                  <YouTubePreview
-                    title={project.videos[0].label}
-                    videoId={project.videos[0].youtubeId}
-                    orientation={project.videos[0].orientation}
-                  />
+                  <>
+                    <YouTubePreview
+                      title={project.videos[0].label}
+                      videoId={project.videos[0].youtubeId}
+                      orientation={project.videos[0].orientation}
+                    />
+                    <YouTubeFallbackLink video={project.videos[0]} />
+                  </>
                 ) : (
                   <div className={styles.campaignVideoGrid}>
                     {project.videos.map((video) => (
@@ -51,6 +67,7 @@ function ProjectSlots({
                           videoId={video.youtubeId}
                           orientation={video.orientation}
                         />
+                        <YouTubeFallbackLink video={video} />
                         <p className={styles.campaignVideoLabel}>{video.label}</p>
                       </div>
                     ))}
