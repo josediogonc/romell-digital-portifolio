@@ -10,8 +10,6 @@
 .videoProject { min-width: 0; }
 .campaignVideoGrid { display: grid; gap: clamp(1.5rem, 3vw, 3rem); }
 .campaignVideo { min-width: 0; width: 100%; max-width: 25rem; }
-.youtubeFallbackLink { display: inline-block; margin-top: 0.75rem; color: var(--color-muted); font: 0.6875rem var(--font-mono); letter-spacing: 0.06em; transition: color var(--transition-fast); }
-.youtubeFallbackLink:hover { color: var(--color-text); }
 .campaignVideoLabel { margin-top: 0.75rem; color: var(--color-muted); font: 0.6875rem var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .videoProjectDetails { display: grid; gap: 0.45rem; margin-top: clamp(1.25rem, 2.5vw, 2rem); }
 .videoProjectTitle { font-size: clamp(1.75rem, 3.1vw, 3rem); font-weight: 400; line-height: 1.02; letter-spacing: -0.055em; }
